@@ -2,9 +2,9 @@
 namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 
 use InvalidArgumentException;
-use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\RenderData as RenderDataContract;
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\RendererData as RendererDataContract;
 
-abstract class RenderData implements RenderDataContract
+abstract class RenderData implements RendererDataContract
 {
     /**
      * @var array

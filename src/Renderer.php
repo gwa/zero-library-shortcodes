@@ -3,7 +3,7 @@ namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 
 use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\Renderer as RendererContract;
 
-abstract class RendererTrait implements RendererContract
+abstract class Renderer implements RendererContract
 {
     /**
      * @var RendererData
