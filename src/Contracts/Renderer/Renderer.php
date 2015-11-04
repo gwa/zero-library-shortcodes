@@ -4,14 +4,11 @@ namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer;
 interface Renderer
 {
     /**
-     * Render shortcode.
+     * Add data.
      *
-     * @param array $atts
-     * @param string $content
-     *
-     * @return string
+     * @param RendererDataContract $renderdata
      */
-    public function render($atts, $content = '');
+    public function setRendererData(RendererData $renderdata);
 
     /**
      * @param  string $element
@@ -20,4 +17,11 @@ interface Renderer
      * @return string
      */
     public function renderElement($element, $data = null);
+
+    /**
+     * Render html.
+     *
+     * @return mixed
+     */
+    public function render();
 }

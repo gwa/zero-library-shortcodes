@@ -2,8 +2,9 @@
 namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 
 use Gwa\Wordpress\MockeryWpBridge\Traits\WpBridgeTrait;
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Shortcode as ShortcodeContract;
 
-abstract class Shortcode extends Renderer
+abstract class Shortcode implements ShortcodeContract
 {
     use WpBridgeTrait;
 
@@ -32,4 +33,14 @@ abstract class Shortcode extends Renderer
      * @return string
      */
     abstract public function getShortcode();
+
+    /**
+     * Render shortcode.
+     *
+     * @param array $atts
+     * @param string $content
+     *
+     * @return string
+     */
+    abstract public function render($atts, $content = '');
 }

@@ -26,8 +26,22 @@ $ composer require gwa/zero-library-shortcodes
 
 ## Usage
 
+First you need to extend RendererData and create a getDefaults function.
+
 ``` php
-echo "test";
+
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\RendererData;
+
+class CardData extends RendererData
+{
+    public function getDefaults()
+    {
+        return [
+            'title' => null,
+        ];
+    }
+}
+
 ```
 
 ## Change log

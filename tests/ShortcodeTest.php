@@ -16,15 +16,6 @@ class ShortcodeTest extends \PHPUnit_Framework_TestCase
 
 class ShortcodeStub extends Shortcode
 {
-    function __construct()
-    {
-        $renderData = new RendererDataStub();
-        $renderData->set('cta', 'test trait');
-        $renderData->set('minheight', 'false');
-
-        $this->setRendererData($renderData);
-    }
-
     public function getShortcode()
     {
         return 'test';

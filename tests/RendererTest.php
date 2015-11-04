@@ -67,7 +67,7 @@ class RendererStub extends Renderer
         return parent::getAttributeHTML($attr);
     }
 
-    public function render($atts, $content = '')
+    public function render()
     {
 
     }

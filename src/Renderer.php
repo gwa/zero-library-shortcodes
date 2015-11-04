@@ -37,16 +37,6 @@ abstract class Renderer implements RendererContract
     }
 
     /**
-     * Render shortcode.
-     *
-     * @param array $atts
-     * @param string $content
-     *
-     * @return string
-     */
-    abstract public function render($atts, $content = '');
-
-    /**
      * @param string $key
      *
      * @return mixed
