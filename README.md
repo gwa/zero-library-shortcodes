@@ -88,7 +88,7 @@ class CardShortcode extends Shortcode
 
     protected function getData()
     {
-        $renderdata = new TeaserRendererData();
+        $renderdata = new CardData();
         $renderdata->set('content', $this->getContent($id))
             ->set('url', 'http://google.com/')
             ->set('title', 'google');
