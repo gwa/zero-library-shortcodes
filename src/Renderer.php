@@ -37,6 +37,13 @@ abstract class Renderer implements RendererContract
     }
 
     /**
+     * Render html.
+     *
+     * @return mixed
+     */
+    abstract public function render();
+
+    /**
      * @param string $key
      *
      * @return mixed

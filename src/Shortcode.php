@@ -10,6 +10,13 @@ abstract class Shortcode implements ShortcodeContract
 
     protected $textdomain;
 
+    /**
+     * Shortcode attributes.
+     *
+     * @var array
+     */
+    public $atts = [];
+
     public function setTextDomain($domain)
     {
         $this->textdomain = $domain;
@@ -22,6 +29,9 @@ abstract class Shortcode implements ShortcodeContract
         return $this->textdomain;
     }
 
+    /**
+     * Register shortcode.
+     */
     public function init()
     {
         $this->getWpBridge()->addShortcode($this->getShortcode(), [$this, 'render']);

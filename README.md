@@ -38,10 +38,73 @@ class CardData extends RendererData
     {
         return [
             'title' => null,
+            'btn'   => null,
+            'url'   => null,
         ];
     }
 }
 
+```
+
+Now we extend the Renderer and add some values for some keys.
+
+``` php
+
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Renderer;
+
+class CardRenderer extends Renderer
+{
+    public function render()
+    {
+        return $this->get('title');
+    }
+}
+
+```
+
+Last thing now is to create a shortcode class.
+
+``` php
+
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Shortcode;
+
+class CardShortcode extends Shortcode
+{
+    public $atts = [
+        'title' => ''
+    ];
+
+    public function getShortcode()
+    {
+        return 'card';
+    }
+
+    public function render($atts)
+    {
+        $attr = $this->getWpBridge()->shortcodeAtts($this->atts, $atts);
+
+        return = (new CardRenderer())->setRendererData($this->getData())->render();
+    }
+
+    protected function getData()
+    {
+        $renderdata = new TeaserRendererData();
+        $renderdata->set('content', $this->getContent($id))
+            ->set('url', 'http://google.com/')
+            ->set('title', 'google');
+
+        return $renderdata;
+    }
+}
+
+```
+
+Register you plugin.
+
+``` php
+use Gwa\Wordpress\MockeryWpBridge\WpBridge;
+
+(new CardShortcode())->setWpBridge(new WpBridge())->init();
 ```
 
 ## Change log
