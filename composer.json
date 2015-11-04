@@ -1,0 +1,54 @@
+{
+    "name"       : "gwa/zero-library-shortcodes",
+    "type"       : "library",
+    "description": "Addon for zero library to build wordpress shortcodes faster.",
+    "keywords"   : [
+        "gwa", "zero", "library", "zero-library", "shortcode", "wordpress"
+    ],
+    "license"    : "MIT",
+    "homepage"   : "https://github.com/gwa/zero-library-shortcodes",
+    "support"    : {
+        "issues"      : "https://github.com/gwa/zero-library-shortcodes/issues",
+        "source"      : "https://github.com/gwa/zero-library-shortcodes"
+    },
+    "authors"    : [
+        {
+            "name"    : "Great White Ark",
+            "email"   : "bannert@greatwhiteark.com",
+            "homepage": "http://www.greatwhiteark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "require": {
+        "php"                                                             : ">=5.4",
+        "gwa/mockery-wp-bridge"                                           : "^1.2"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer"                                             : "~1.10",
+        "mockery/mockery"                                                 : "~0.9.4",
+        "phpunit/phpunit"                                                 : "~4.8.9",
+        "scrutinizer/ocular"                                              : "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gwa\\Wordpress\\Template\\Zero\\Library\\Shortcodes\\"       : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gwa\\Wordpress\\Template\\Zero\\Library\\Shortcodes\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master"                                                  : "1.0.0-dev"
+        }
+    },
+    "scripts": {
+        "test"                                                            : "sh vendor/bin/phpunit",
+        "check-cs"                                                        : "sh vendor/bin/php-cs-fixer fix -v --dry-run",
+        "fix-cs"                                                          : "sh vendor/bin/php-cs-fixer fix"
+    },
+    "minimum-stability"                                                   : "dev",
+    "prefer-stable"                                                       : true
+}
