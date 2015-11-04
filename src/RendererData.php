@@ -4,7 +4,7 @@ namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 use InvalidArgumentException;
 use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\RendererData as RendererDataContract;
 
-abstract class RenderData implements RendererDataContract
+abstract class RendererData implements RendererDataContract
 {
     /**
      * @var array

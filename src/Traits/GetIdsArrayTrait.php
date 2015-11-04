@@ -7,7 +7,10 @@ namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes\Traits;
 trait GetIdsArrayTrait
 {
     /**
+     * Get ids from string.
+     *
      * @param string $ids comma separated ids
+     *
      * @return array
      */
     protected function getIdsArray($ids)

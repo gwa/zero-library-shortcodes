@@ -2,25 +2,26 @@
 namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 
 use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\Renderer as RendererContract;
+use Gwa\Wordpress\Template\Zero\Library\Shortcodes\Contracts\Renderer\RendererData as RendererDataContract;
 
 abstract class Renderer implements RendererContract
 {
     /**
-     * @var RendererData
+     * @var RendererDataContract
      */
     protected $renderdata;
 
     /**
-     * @param RendererData $renderdata
+     * @param RendererDataContract $renderdata
      */
-    public function __construct(RendererData $renderdata)
+    public function __construct(RendererDataContract $renderdata)
     {
         $this->renderdata = $renderdata;
     }
 
     /**
-     * @param  string $template
-     * @param  string|null $data
+     * @param string $template
+     * @param string|null $data
      *
      * @return string
      */
@@ -76,7 +77,7 @@ abstract class Renderer implements RendererContract
      *
      * @return string
      */
-    private function getAttributeHTML($attr)
+    protected function getAttributeHTML($attr)
     {
         $data = $this->get($attr);
         return $data ? 'data-' . $attr . '="' . $data . '"' : '';
