@@ -1,5 +1,5 @@
 <?php
-namespace Gwa\Wordpress\Template\ContentHub\Shortcode;
+namespace Gwa\Wordpress\Template\Zero\Library\Shortcodes;
 
 use Gwa\Wordpress\MockeryWpBridge\Traits\WpBridgeTrait;
 
