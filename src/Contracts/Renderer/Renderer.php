@@ -11,7 +11,7 @@ interface Renderer
      *
      * @return string
      */
-    public function render();
+    public function render($atts, $content = '');
 
     /**
      * @param  string $element
