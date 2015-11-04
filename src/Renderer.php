@@ -17,10 +17,12 @@ abstract class Renderer implements RendererContract
     public function setRendererData(RendererDataContract $renderdata)
     {
         $this->renderdata = $renderdata;
+
+        return $this;
     }
 
     /**
-     * @param string $template
+     * @param string      $template
      * @param string|null $data
      *
      * @return string
