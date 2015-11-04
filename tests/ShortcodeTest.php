@@ -22,7 +22,7 @@ class ShortcodeStub extends Shortcode
         $renderData->set('cta', 'test trait');
         $renderData->set('minheight', 'false');
 
-        parent::__construct($renderData);
+        $this->setRendererData($renderData);
     }
 
     public function getShortcode()

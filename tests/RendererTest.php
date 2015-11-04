@@ -49,7 +49,7 @@ class RendererStub extends Renderer
         $renderData->set('cta', 'test trait');
         $renderData->set('minheight', 'false');
 
-        parent::__construct($renderData);
+        $this->setRendererData($renderData);
     }
 
     public function get($key)

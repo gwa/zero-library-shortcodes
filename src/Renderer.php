@@ -14,7 +14,7 @@ abstract class Renderer implements RendererContract
     /**
      * @param RendererDataContract $renderdata
      */
-    public function __construct(RendererDataContract $renderdata)
+    public function setRendererData(RendererDataContract $renderdata)
     {
         $this->renderdata = $renderdata;
     }
