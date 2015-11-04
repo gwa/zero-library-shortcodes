@@ -32,12 +32,4 @@ abstract class Shortcode extends Renderer
      * @return string
      */
     abstract public function getShortcode();
-
-    /**
-     * @param array $atts
-     * @param string $content
-     *
-     * @return string
-     */
-    abstract protected function render($atts, $content = '');
 }

@@ -41,7 +41,7 @@ abstract class Renderer implements RendererContract
      *
      * @return string
      */
-    abstract protected function render($atts, $content = '');
+    abstract public function render($atts, $content = '');
 
     /**
      * @param string $key
