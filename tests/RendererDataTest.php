@@ -43,6 +43,22 @@ class RendererDataTest extends \PHPUnit_Framework_TestCase
         $renderData = new RendererDataStub();
         $renderData->get('h2');
     }
+
+    public function testGetData()
+    {
+        $renderData = new RendererDataStub();
+        $expected = [
+            'h3'        => 'headline',
+            'cta'       => 'foobar',
+            'details'   => null,
+            'minheight' => true,
+        ];
+
+        $this->assertSame($renderData->getAllData(), $expected);
+
+        $renderData->set('h3', 'test');
+        $this->assertNotEquals($renderData->getAllData(), $expected);
+    }
 }
 
 class RendererDataStub extends RendererData

@@ -11,6 +11,11 @@ abstract class RendererData implements RendererDataContract
      */
     protected $data = [];
 
+    public function __construct()
+    {
+        $this->data = $this->getDefaults();
+    }
+
     /**
      * @param string $key
      * @param mixed  $value
@@ -34,24 +39,12 @@ abstract class RendererData implements RendererDataContract
      * @param  string $key
      *
      * @throws \InvalidArgumentException
-     */
-    protected function checkKeyExistInDefault($key)
-    {
-        if (!array_key_exists($key, $this->getDefaults())) {
-            throw new InvalidArgumentException(sprintf('Key[%s] dont exists in defaults array.', $key));
-        }
-    }
-
-    /**
-     * @param  string $key
-     *
-     * @throws \InvalidArgumentException
      *
      * @return mixed
      */
     public function get($key)
     {
-        if (!array_key_exists($key, $this->getDefaults())) {
+        if (!array_key_exists($key, $this->getAllData())) {
             throw new InvalidArgumentException(sprintf('Key[%s] dont exists.', $key));
         }
 
@@ -59,11 +52,33 @@ abstract class RendererData implements RendererDataContract
             return $this->data[$key];
         }
 
-        return $this->getDefaults()[$key];
+        return $this->getAllData()[$key];
+    }
+
+    /**
+     * Get all saved data.
+     *
+     * @return array
+     */
+    public function getAllData()
+    {
+        return $this->data;
     }
 
     /**
      * @return  array
      */
     abstract public function getDefaults();
+
+    /**
+     * @param  string $key
+     *
+     * @throws \InvalidArgumentException
+     */
+    protected function checkKeyExistInDefault($key)
+    {
+        if (!array_key_exists($key, $this->getDefaults())) {
+            throw new InvalidArgumentException(sprintf('Key[%s] dont exists in defaults array.', $key));
+        }
+    }
 }
