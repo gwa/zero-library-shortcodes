@@ -12,13 +12,20 @@ abstract class Renderer implements RendererContract
     protected $renderdata;
 
     /**
-     * @param RendererDataContract $renderdata
+     * @param RendererData $renderdata
+     *
+     * @return \Gwa\Wordpress\Template\Zero\Library\Shortcodes\Renderer
      */
     public function setRendererData(RendererDataContract $renderdata)
     {
         $this->renderdata = $renderdata;
 
         return $this;
+    }
+
+    public function getRendererData()
+    {
+        return $this->renderdata;
     }
 
     /**
@@ -50,7 +57,7 @@ abstract class Renderer implements RendererContract
      */
     protected function get($key)
     {
-        return $this->renderdata->get($key);
+        return $this->getRendererData()->get($key);
     }
 
     /**

@@ -13,6 +13,14 @@ class RendererTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($renderer->get('cta'), 'test trait');
     }
 
+    public function testGetRendererData()
+    {
+        $renderer   = new RendererStub();
+        $renderData = new RendererDataStub();
+
+        $this->assertInstanceOf(get_class($renderer->getRendererData()), $renderData);
+    }
+
     public function testRenderElement()
     {
         $renderer = new RendererStub();

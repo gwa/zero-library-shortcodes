@@ -48,10 +48,6 @@ abstract class RendererData implements RendererDataContract
             throw new InvalidArgumentException(sprintf('Key[%s] dont exists.', $key));
         }
 
-        if (array_key_exists($key, $this->data)) {
-            return $this->data[$key];
-        }
-
         return $this->getAllData()[$key];
     }
 
